@@ -13,8 +13,10 @@ class Ability
           can :manage, :all
         when 'agent'
           can :manage, Lead
+          can :manage, LeadStatus
         when 'adviser'
           can :manage, Lead, :user_id => user.id
+          can :read, LeadStatus
       end
       can :access, :rails_admin   # grant access to rails_admin
       can :dashboard

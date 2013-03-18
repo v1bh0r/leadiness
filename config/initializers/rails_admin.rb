@@ -16,7 +16,7 @@ RailsAdmin.config do |config|
   config.current_user_method { current_user } # auto-generated
 
   # If you want to track changes on your models:
-  # config.audit_with :history, 'User'
+  config.audit_with :history, 'Lead'
 
   # Or with a PaperTrail: (you need to install it first)
   # config.audit_with :paper_trail, 'User'
@@ -162,7 +162,9 @@ RailsAdmin.config do |config|
       field :lead_status
       field :comments
     end
-
   end
 
+  config.model LeadStatus do
+    field :name
+  end
 end
